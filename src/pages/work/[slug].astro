@@ -4,6 +4,8 @@ import CaseStudySection from '../../components/CaseStudySection.astro';
 import FrameworkDiagram from '../../components/FrameworkDiagram.astro';
 import CourseEmbedComponent from '../../components/CourseEmbed.astro';
 import PlaceholderScreen from '../../components/PlaceholderScreen.astro';
+import ProcessEvidence from '../../components/ProcessEvidence.astro';
+import EvidenceCard from '../../components/EvidenceCard.astro';
 import Tag from '../../components/Tag.astro';
 import Button from '../../components/Button.astro';
 import { projects } from '../../lib/projects';
@@ -64,11 +66,35 @@ const { project } = Astro.props;
       {project.approach && <CaseStudySection heading="Instructional Approach" items={project.approach} />}
 
       {
+        project.designProcess && project.designProcess.length > 0 && (
+          <CaseStudySection heading="How I Designed It">
+            <ProcessEvidence steps={project.designProcess} />
+          </CaseStudySection>
+        )
+      }
+
+      {
         project.redesign && (
           <>
             <CaseStudySection heading="Before" items={project.redesign.before} />
             <CaseStudySection heading="Analysis" items={project.redesign.analysis} />
             <CaseStudySection heading="Redesign" items={project.redesign.redesignStrategy} />
+            {project.scriptExample && (
+              <CaseStudySection heading="Script Example">
+                <EvidenceCard
+                  rows={[
+                    { label: 'Scene', value: project.scriptExample.scene },
+                    { label: 'On-screen text', value: project.scriptExample.text },
+                    ...(project.scriptExample.interaction
+                      ? [{ label: 'Learner interaction', value: project.scriptExample.interaction }]
+                      : []),
+                    ...(project.scriptExample.feedback
+                      ? [{ label: 'Feedback', value: project.scriptExample.feedback }]
+                      : []),
+                  ]}
+                />
+              </CaseStudySection>
+            )}
             <CaseStudySection
               heading="Resulting Learning Experience"
               items={project.redesign.resultingExperience}
@@ -82,6 +108,43 @@ const { project } = Astro.props;
       {project.interactions && <CaseStudySection heading="Interactions" items={project.interactions} />}
 
       {project.assessment && <CaseStudySection heading="Assessment" items={project.assessment} />}
+
+      {
+        project.storyboardExample && (
+          <CaseStudySection heading="Storyboard Example">
+            <EvidenceCard
+              rows={[
+                { label: 'Screen', value: project.storyboardExample.screenNumber },
+                { label: 'Screen title', value: project.storyboardExample.screenTitle },
+                { label: 'On-screen text', value: project.storyboardExample.onScreenText },
+                { label: 'Interaction', value: project.storyboardExample.interaction },
+                ...(project.storyboardExample.notes
+                  ? [{ label: 'Design notes', value: project.storyboardExample.notes }]
+                  : []),
+              ]}
+            />
+          </CaseStudySection>
+        )
+      }
+
+      {
+        project.scriptExample && !project.redesign && (
+          <CaseStudySection heading="Script Example">
+            <EvidenceCard
+              rows={[
+                { label: 'Scene', value: project.scriptExample.scene },
+                { label: 'On-screen text', value: project.scriptExample.text },
+                ...(project.scriptExample.interaction
+                  ? [{ label: 'Learner interaction', value: project.scriptExample.interaction }]
+                  : []),
+                ...(project.scriptExample.feedback
+                  ? [{ label: 'Feedback', value: project.scriptExample.feedback }]
+                  : []),
+              ]}
+            />
+          </CaseStudySection>
+        )
+      }
 
       {project.tools && project.tools.length > 0 && (
         <CaseStudySection heading="Tools">

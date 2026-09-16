@@ -52,35 +52,35 @@ export const processSteps = [
     label: 'Understand',
     summary: 'Identify the learners, context, problem, and desired outcome.',
     detail:
-      'Before any content or tool decision, the starting point is the learner and the problem they actually have — who they are, what situation they are in, and what is currently getting in the way. A learning need that is not properly understood produces a course that solves the wrong problem well.',
+      'Before I decide on content or a tool, I need to understand the learner and the problem they actually have: who they are, what situation they are in, and what is getting in the way right now. If I get this wrong, I can build a polished course that solves the wrong problem.',
   },
   {
     number: '02',
     label: 'Define',
     summary: 'Establish learning objectives and determine what learners need to know or do.',
     detail:
-      'Objectives are written in terms of what a learner should be able to do afterward, not what content will be covered. This is what keeps a course accountable to an outcome instead of a topic list, and it is the reference point every later design decision gets checked against.',
+      'I write objectives around what a learner should be able to do afterward, not what content gets covered. This keeps the course focused on an outcome instead of a list of topics, and every later decision gets checked against it.',
   },
   {
     number: '03',
     label: 'Design',
     summary: 'Structure the learning experience, content, practice, interaction, and assessment.',
     detail:
-      'This is where the instructional strategy takes shape: how content is sequenced, where practice happens, what a learner decides or does at each point, and how assessment will actually verify the objective — not simply confirm the learner was present.',
+      'This is where I work out the instructional strategy: how the content is sequenced, where learners practise, what they decide or do at each point, and how the assessment will actually check the objective rather than just confirm the learner clicked through.',
   },
   {
     number: '04',
     label: 'Develop',
     summary: 'Build the experience using the appropriate digital learning tools.',
     detail:
-      'The tool is chosen to fit the design, not the other way around. Articulate Rise suits structured microlearning; Storyline suits branching scenarios with consequence; Genially suits exploratory, visually-led interaction. The build stays accountable to the objectives set in the previous stage.',
+      'I choose the tool to fit the design, not the other way round. Rise suits structured microlearning, Storyline suits branching scenarios with real consequences, and Genially suits exploratory, visual interaction. The build stays accountable to the objectives set in the previous stage.',
   },
   {
     number: '05',
     label: 'Evaluate',
     summary: 'Review the learning experience for clarity, usability, accuracy, alignment, and effectiveness.',
     detail:
-      'Every course is reviewed against its own objectives before it is considered finished: is the content accurate, is the navigation clear, does every assessment item actually measure what it claims to, and would a learner who completed it be able to do what the course promised.',
+      'Before I call a course finished, I check it against its own objectives. Is the content accurate? Is the navigation clear? Does every assessment question actually measure what it claims to? Would a learner who completed it be able to do what the course promised?',
   },
 ];
 

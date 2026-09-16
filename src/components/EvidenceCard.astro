@@ -1,0 +1,61 @@
+---
+interface Row {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  rows: Row[];
+}
+
+const { rows } = Astro.props;
+---
+
+<dl class="evidence-card">
+  {
+    rows.map((row) => (
+      <div class="evidence-row">
+        <dt>{row.label}</dt>
+        <dd>{row.value}</dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .evidence-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    padding: var(--space-md);
+    margin: 0;
+  }
+
+  .evidence-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .evidence-row + .evidence-row {
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+  }
+
+  dt {
+    font-family: var(--font-mono);
+    font-size: var(--step-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  dd {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.65;
+  }
+</style>
