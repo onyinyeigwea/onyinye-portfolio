@@ -14,12 +14,10 @@ export const nav = [
   { label: 'Contact', href: '/contact' },
 ];
 
-// NOTE: real contact details were not available in the project source
-// material. These are clean placeholders — replace before publishing.
 export const contact = {
-  email: 'hello@onyinyeigwe.com',
-  linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/onyinyeigwe' },
-  upwork: { label: 'Upwork', href: 'https://www.upwork.com/freelancers/onyinyeigwe' },
+  email: 'onyinyeigwe.a@gmail.com',
+  linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/igweonyinye/' },
+  upwork: { label: 'Upwork', href: 'https://www.upwork.com/freelancers/onyinyemiriam' },
 };
 
 export const expertise = [
