@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { processSteps } from '../lib/site';
+---
+
+<BaseLayout
+  title="Approach"
+  description="A five-stage design process — Understand, Define, Design, Develop, Evaluate — for turning a learning need into a finished learning experience."
+>
+  <section class="approach-hero">
+    <div class="wrap">
+      <p class="eyebrow">Approach</p>
+      <h1 class="section-heading">From Learning Need to Learning Experience</h1>
+      <p class="section-intro">
+        Good learning design begins with understanding the learner and the problem — not choosing a tool.
+      </p>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <ol class="process-list">
+        {
+          processSteps.map((step) => (
+            <li class="process-step">
+              <div class="process-number">{step.number}</div>
+              <div class="process-content">
+                <h2>{step.label}</h2>
+                <p class="process-summary">{step.summary}</p>
+                <p class="process-detail">{step.detail}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .approach-hero {
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-intro {
+    margin-top: var(--space-sm);
+    font-size: var(--step-md);
+  }
+
+  .process {
+    padding-block: var(--space-2xl);
+  }
+
+  .process-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    gap: var(--space-lg);
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .process-step:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .process-number {
+    font-family: var(--font-serif);
+    font-size: var(--step-2xl);
+    color: var(--color-accent);
+    line-height: 1;
+  }
+
+  .process-content h2 {
+    font-size: var(--step-lg);
+    margin-bottom: 0.4rem;
+  }
+
+  .process-summary {
+    font-size: var(--step-md);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+    max-width: 38rem;
+  }
+
+  .process-detail {
+    color: var(--color-text-muted);
+    max-width: 42rem;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 620px) {
+    .process-step {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+    }
+
+    .process-number {
+      font-size: var(--step-lg);
+    }
+  }
+</style>

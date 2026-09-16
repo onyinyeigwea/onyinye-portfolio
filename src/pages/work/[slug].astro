@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudySection from '../../components/CaseStudySection.astro';
+import FrameworkDiagram from '../../components/FrameworkDiagram.astro';
+import CourseEmbedComponent from '../../components/CourseEmbed.astro';
+import PlaceholderScreen from '../../components/PlaceholderScreen.astro';
+import Tag from '../../components/Tag.astro';
+import Button from '../../components/Button.astro';
+import { projects } from '../../lib/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={project.title} description={project.shortDescription}>
+  <article>
+    <header class="cs-header">
+      <div class="wrap">
+        <p class="eyebrow">{project.projectType}</p>
+        <h1>{project.title}</h1>
+        <p class="cs-description">{project.shortDescription}</p>
+        <div class="cs-tags">
+          <Tag>{project.tool}</Tag>
+          <Tag>{project.category}</Tag>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap cs-body">
+      {
+        project.framework && (
+          <section class="cs-framework">
+            <FrameworkDiagram framework={project.framework} />
+          </section>
+        )
+      }
+
+      {
+        project.embed ? (
+          <section class="cs-hero-media">
+            <CourseEmbedComponent embed={project.embed} />
+          </section>
+        ) : project.isPlaceholder ? (
+          <section class="cs-hero-media">
+            <PlaceholderScreen label={project.placeholderNote} />
+          </section>
+        ) : null
+      }
+
+      {project.overview && <CaseStudySection heading="Overview" items={project.overview} />}
+
+      {project.learningNeed && <CaseStudySection heading="Learning Need" items={project.learningNeed} />}
+
+      {project.audience && <CaseStudySection heading="Audience" items={project.audience} />}
+
+      {project.objectives && <CaseStudySection heading="Learning Objectives" items={project.objectives} />}
+
+      {project.approach && <CaseStudySection heading="Instructional Approach" items={project.approach} />}
+
+      {
+        project.redesign && (
+          <>
+            <CaseStudySection heading="Before" items={project.redesign.before} />
+            <CaseStudySection heading="Analysis" items={project.redesign.analysis} />
+            <CaseStudySection heading="Redesign" items={project.redesign.redesignStrategy} />
+            <CaseStudySection
+              heading="Resulting Learning Experience"
+              items={project.redesign.resultingExperience}
+            />
+          </>
+        )
+      }
+
+      {project.experience && <CaseStudySection heading="Learning Experience" items={project.experience} />}
+
+      {project.interactions && <CaseStudySection heading="Interactions" items={project.interactions} />}
+
+      {project.assessment && <CaseStudySection heading="Assessment" items={project.assessment} />}
+
+      {project.tools && project.tools.length > 0 && (
+        <CaseStudySection heading="Tools">
+          <div class="tools-row">
+            {project.tools.map((tool: string) => (
+              <Tag>{tool}</Tag>
+            ))}
+          </div>
+        </CaseStudySection>
+      )}
+
+      {
+        project.designTakeaway && (
+          <section class="cs-takeaway">
+            <h2 class="cs-heading">Design Takeaway</h2>
+            <p>{project.designTakeaway}</p>
+          </section>
+        )
+      }
+    </div>
+
+    <nav class="cs-nav wrap" aria-label="Case study navigation">
+      <Button href="/work" variant="secondary">&larr; All Work</Button>
+      <Button href="/contact" variant="primary">Let's Connect</Button>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .cs-header {
+    padding-block: var(--space-xl) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cs-header h1 {
+    font-size: var(--step-2xl);
+    margin-block: var(--space-xs) var(--space-sm);
+    max-width: 42rem;
+  }
+
+  .cs-description {
+    color: var(--color-text-muted);
+    font-size: var(--step-md);
+    max-width: 38rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cs-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cs-body {
+    padding-block: var(--space-lg) var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cs-framework {
+    padding-block: var(--space-md) var(--space-lg);
+  }
+
+  .cs-hero-media {
+    margin-bottom: var(--space-md);
+  }
+
+  .cs-takeaway {
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-accent-soft);
+    margin-inline: calc(var(--space-md) * -1);
+    padding-inline: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  .cs-takeaway .cs-heading {
+    font-size: var(--step-md);
+    margin-bottom: 0.5rem;
+  }
+
+  .cs-takeaway p {
+    color: var(--color-text);
+    max-width: 42rem;
+    line-height: 1.7;
+  }
+
+  .tools-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cs-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-block: var(--space-lg) var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 500px) {
+    .cs-nav {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+  }
+</style>

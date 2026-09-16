@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Tag from '../components/Tag.astro';
+import { aboutCopy, professionalProfile, expertise, tools } from '../lib/site';
+---
+
+<BaseLayout
+  title="About"
+  description="Onyinye Miriam Igwe is a Learning Experience and Instructional Designer with 13+ years of experience across education, curriculum development, assessment, and digital learning."
+>
+  <section class="about-hero">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1 class="section-heading">About Me</h1>
+      <div class="about-copy">
+        {aboutCopy.intro.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-section">
+    <div class="wrap profile-grid">
+      <h2 class="cs-heading">Professional Profile</h2>
+      <ul class="profile-list">
+        {professionalProfile.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="expertise-section">
+    <div class="wrap expertise-grid-wrap">
+      <h2 class="cs-heading">Expertise</h2>
+      <ul class="expertise-list">
+        {expertise.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="tools-section">
+    <div class="wrap">
+      <h2 class="cs-heading">Tools</h2>
+      <div class="tools-columns">
+        {
+          tools.map((group) => (
+            <div class="tools-group">
+              <p class="tools-group-label">{group.category}</p>
+              <div class="tools-tags">
+                {group.items.map((item) => (
+                  <Tag>{item}</Tag>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-copy {
+    margin-top: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 42rem;
+  }
+
+  .about-copy p {
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    font-size: var(--step-base);
+  }
+
+  .profile-section,
+  .expertise-section,
+  .tools-section {
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cs-heading {
+    font-size: var(--step-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .profile-grid {
+    max-width: 52rem;
+  }
+
+  .profile-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .profile-list li {
+    position: relative;
+    padding-left: 1.25rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .profile-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  .expertise-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .expertise-list li {
+    font-family: var(--font-serif);
+    font-size: var(--step-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .tools-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .tools-group-label {
+    font-family: var(--font-mono);
+    font-size: var(--step-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .tools-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+</style>

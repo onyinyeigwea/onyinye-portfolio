@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../lib/projects';
+---
+
+<BaseLayout
+  title="Work"
+  description="Learning experience design, eLearning development, curriculum transformation and assessment projects by Onyinye Miriam Igwe."
+>
+  <section class="work-header">
+    <div class="wrap">
+      <p class="eyebrow">Work</p>
+      <h1 class="section-heading">Selected Learning Experiences</h1>
+      <p class="section-intro">
+        Seven projects spanning corporate microlearning, scenario-based training, curriculum
+        transformation, and course redesign — each documented as a case study covering the learning
+        problem, the design decisions, and the resulting experience.
+      </p>
+    </div>
+  </section>
+
+  <section class="work-grid-section">
+    <div class="wrap">
+      <div class="project-grid">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .work-header {
+    padding-block: var(--space-xl) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-intro {
+    margin-top: var(--space-sm);
+  }
+
+  .work-grid-section {
+    padding-block: var(--space-2xl);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: var(--space-lg);
+  }
+</style>

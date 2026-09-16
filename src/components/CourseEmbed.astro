@@ -1,0 +1,62 @@
+---
+import type { CourseEmbed } from '../lib/projects';
+
+interface Props {
+  embed: CourseEmbed;
+}
+
+const { embed } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const src = `${base}${embed.src}`;
+---
+
+<figure class="course-embed">
+  <div class="embed-frame" style={embed.aspectRatio ? `aspect-ratio:${embed.aspectRatio}` : undefined}>
+    <iframe src={src} title={embed.title} loading="lazy" allowfullscreen></iframe>
+  </div>
+  <figcaption>
+    <span>{embed.note ?? 'Live, interactive course build — use the controls inside the frame.'}</span>
+    <a href={src} target="_blank" rel="noopener noreferrer">Open in a new tab &rarr;</a>
+  </figcaption>
+</figure>
+
+<style>
+  .course-embed {
+    margin: 0;
+  }
+
+  .embed-frame {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .embed-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: var(--space-xs);
+    font-size: var(--step-xs);
+    color: var(--color-text-muted);
+  }
+
+  figcaption a {
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  figcaption a:hover {
+    color: var(--color-accent-hover);
+  }
+</style>

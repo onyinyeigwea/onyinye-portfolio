@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { contact } from '../lib/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Get in touch with Onyinye Miriam Igwe about Learning Experience Design, Instructional Design, eLearning, and Educational Technology opportunities."
+>
+  <section class="contact-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1 class="section-heading">Let's Work Together</h1>
+      <p class="section-intro">
+        I am open to opportunities in Learning Experience Design, Instructional Design, eLearning,
+        Educational Technology, curriculum development, and digital learning.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-channels">
+    <div class="wrap channel-grid">
+      <a class="channel-card" href={`mailto:${contact.email}`}>
+        <span class="channel-label">Email</span>
+        <span class="channel-value">{contact.email}</span>
+      </a>
+      <a class="channel-card" href={contact.linkedin.href} target="_blank" rel="noopener noreferrer">
+        <span class="channel-label">LinkedIn</span>
+        <span class="channel-value">{contact.linkedin.label}</span>
+      </a>
+      <a class="channel-card" href={contact.upwork.href} target="_blank" rel="noopener noreferrer">
+        <span class="channel-label">Upwork</span>
+        <span class="channel-value">{contact.upwork.label}</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding-block: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-intro {
+    margin-top: var(--space-sm);
+    font-size: var(--step-md);
+    max-width: 38rem;
+  }
+
+  .contact-channels {
+    padding-block: var(--space-2xl);
+  }
+
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--space-md);
+  }
+
+  .channel-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color var(--duration-fast) var(--ease-standard);
+  }
+
+  .channel-card:hover {
+    border-color: var(--color-accent);
+  }
+
+  .channel-label {
+    font-family: var(--font-mono);
+    font-size: var(--step-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .channel-value {
+    font-family: var(--font-serif);
+    font-size: var(--step-md);
+    color: var(--color-text);
+  }
+</style>

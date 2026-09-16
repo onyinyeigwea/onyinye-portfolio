@@ -1,0 +1,86 @@
+---
+interface Props {
+  heading: string;
+  items?: string[];
+  paragraph?: string;
+  id?: string;
+}
+
+const { heading, items, paragraph, id } = Astro.props;
+---
+
+<section class="cs-section" id={id}>
+  <h2 class="cs-heading">{heading}</h2>
+  <div class="cs-content">
+    {paragraph && <p>{paragraph}</p>}
+    {
+      items && items.length > 0 && (
+        <ul class="cs-list">
+          {items.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      )
+    }
+    <slot />
+  </div>
+</section>
+
+<style>
+  .cs-section {
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: minmax(10rem, 16rem) 1fr;
+    gap: var(--space-lg);
+  }
+
+  .cs-heading {
+    font-size: var(--step-md);
+    color: var(--color-text);
+  }
+
+  .cs-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: 42rem;
+  }
+
+  .cs-content p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .cs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .cs-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .cs-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  @media (max-width: 760px) {
+    .cs-section {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+    }
+  }
+</style>
