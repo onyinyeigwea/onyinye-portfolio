@@ -39,7 +39,7 @@ const { project } = Astro.props;
       <a href={`/work/${project.slug}`}>{project.title}</a>
     </h3>
     <p class="card-description">{project.shortDescription}</p>
-    <p class="card-type">{project.projectType}</p>
+    {project.projectType && <p class="card-type">{project.projectType}</p>}
     <a class="card-link" href={`/work/${project.slug}`}>
       View Case Study
       <span aria-hidden="true">&rarr;</span>

@@ -10,23 +10,23 @@ const { framework } = Astro.props;
 
 <div class="framework">
   {framework.intro && <p class="framework-intro">{framework.intro}</p>}
-  <ol class="framework-steps">
+  <div class="framework-steps">
     {
       framework.steps.map((step, i) => (
-        <>
-          <li class="framework-step">
+        <div class="framework-item">
+          <div class="framework-step">
             <span class="step-label">{step.label}</span>
             {step.description && <span class="step-description">{step.description}</span>}
-          </li>
+          </div>
           {i < framework.steps.length - 1 && (
-            <li class="framework-arrow" aria-hidden="true">
+            <span class="framework-arrow" aria-hidden="true">
               &rarr;
-            </li>
+            </span>
           )}
-        </>
+        </div>
       ))
     }
-  </ol>
+  </div>
 </div>
 
 <style>
@@ -39,9 +39,14 @@ const { framework } = Astro.props;
   .framework-steps {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: center;
+    gap: var(--space-sm) var(--space-xs);
+  }
+
+  .framework-item {
+    display: flex;
+    align-items: center;
     gap: var(--space-xs);
-    list-style: none;
   }
 
   .framework-step {
@@ -79,12 +84,16 @@ const { framework } = Astro.props;
   @media (max-width: 700px) {
     .framework-steps {
       flex-direction: column;
+      align-items: stretch;
+    }
+
+    .framework-item {
+      flex-direction: column;
     }
 
     .framework-arrow {
       transform: rotate(90deg);
       align-self: center;
-      padding-block: -0.25rem;
     }
   }
 </style>

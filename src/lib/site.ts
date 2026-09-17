@@ -20,6 +20,7 @@ export const contact = {
   upwork: { label: 'Upwork', href: 'https://www.upwork.com/freelancers/onyinyemiriam' },
 };
 
+// Full capability list, shown on the About page.
 export const expertise = [
   'Learning Experience Design',
   'Instructional Design',
@@ -35,6 +36,20 @@ export const expertise = [
   'eLearning Design',
   'Digital Learning',
   'Learning Evaluation',
+  'Learner Performance Analysis',
+];
+
+// Shorter, scannable list for the homepage.
+export const homeExpertise = [
+  'Learning Experience Design',
+  'Instructional Design',
+  'Curriculum Design',
+  'Learner Analysis',
+  'Needs Analysis',
+  'Assessment Design',
+  'eLearning Design',
+  'Storyboarding',
+  'Digital Learning',
   'Articulate Rise 360',
   'Articulate Storyline',
   'Genially',
@@ -89,13 +104,13 @@ export const processSteps = [
     label: 'Evaluate',
     summary: 'Review the learning experience for clarity, usability, accuracy, alignment, and effectiveness.',
     detail:
-      'Before I call a course finished, I check it against its own objectives. Is the content accurate? Is the navigation clear? Does every assessment question actually measure what it claims to? Would a learner who completed it be able to do what the course promised?',
+      'Evaluation is different from assessment. Assessment checks whether a learner has demonstrated what a course set out to teach. Evaluation checks whether the learning experience itself works: is it accurate, clear, usable, and aligned with its own objectives? Before I call a course finished, I check it against those objectives and review how the assessment questions perform. In my wider education work, this has also included reviewing learner and performance data and learner feedback to identify recurring gaps and inform revisions. Where that kind of information exists for a project, I use it. Where a project has no post-release data, evaluation focuses on alignment, clarity, accuracy, and usability before release.',
   },
 ];
 
 export const aboutCopy = {
   intro: [
-    'I am a Learning Experience and Instructional Designer with 13+ years of experience across education, curriculum development, assessment, digital learning, and learning operations.',
+    'I am a Learning Experience and Instructional Designer with 13+ years of experience across education, curriculum development, assessment, and digital learning.',
     'My background in education gives me a strong understanding of how people learn, where learners struggle, and how instructional decisions affect engagement and performance.',
     'I work across instructional design, digital learning development, curriculum design, assessment, learner analysis, and educational technology.',
     'My experience includes developing learning experiences with Articulate Rise 360, Articulate Storyline, Genially, and Canva, alongside practical experience in education leadership and curriculum development.',
@@ -104,9 +119,10 @@ export const aboutCopy = {
 };
 
 export const professionalProfile = [
-  'Educational Technology and Learning Professional with 13+ years of experience spanning education leadership, instructional design, curriculum development, assessment, learner support, digital learning, and learning operations.',
+  'Educational Technology and Learning Professional with 13+ years of experience spanning education leadership, instructional design, curriculum development, assessment, learner support, and digital learning.',
+  'Holds a Diploma in Instructional Design, building on more than a decade of classroom teaching and educational leadership experience.',
   'Experienced in designing and evaluating learning experiences, developing structured instructional content, analysing learner performance, implementing technology-enabled learning solutions, and leading teams to improve educational outcomes.',
-  'Strong understanding of how technology can support teaching, learning, assessment, learner engagement, and educational operations.',
+  'Strong understanding of how technology can support teaching, learning, assessment, learner engagement, and learning evaluation.',
   'Experienced in evaluating educational content for accuracy, clarity, age appropriateness, curriculum alignment, logical progression, and instructional effectiveness, while using learner and performance data to identify gaps and inform targeted interventions.',
   'Combines practical classroom and leadership experience with expertise across Educational Technology, Instructional Design, Curriculum Development, Assessment, Physics, Mathematics, Science, STEM, and English Language.',
   'Particularly interested in the intersection of education, technology, artificial intelligence, and data-informed learning.',

@@ -26,7 +26,7 @@ const { project } = Astro.props;
   <article>
     <header class="cs-header">
       <div class="wrap">
-        <p class="eyebrow">{project.projectType}</p>
+        {project.projectType && <p class="eyebrow">{project.projectType}</p>}
         <h1>{project.title}</h1>
         <p class="cs-description">{project.shortDescription}</p>
         <div class="cs-tags">

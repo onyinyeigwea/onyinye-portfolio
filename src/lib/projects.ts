@@ -54,7 +54,7 @@ export interface Project {
   shortDescription: string;
   tool: string;
   tools: string[];
-  projectType: string;
+  projectType?: string;
   category: string;
   isPlaceholder?: boolean;
   placeholderNote?: string;
@@ -81,7 +81,6 @@ export const projects: Project[] = [
       'A Rise 360 course that helps employees and team leaders give specific feedback and respond well when they receive it.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Corporate Microlearning Course',
     category: 'Corporate Microlearning',
     embed: {
       src: '/courses/effective-workplace-communication/index.html',
@@ -97,7 +96,6 @@ export const projects: Project[] = [
         'Learners compare real feedback examples, apply the Situation, Behaviour, Impact, Next Step structure, and practise responding to feedback they disagree with.',
     },
     framework: {
-      intro: 'The course teaches two linked frameworks: one for giving feedback, one for receiving it.',
       steps: [
         { label: 'Situation', description: 'Describe when or where the situation happened.' },
         { label: 'Behaviour', description: 'Describe what was observed, not what was assumed.' },
@@ -175,7 +173,6 @@ export const projects: Project[] = [
         'Learners make decisions, see how their responses affect the conversation, and practise a five-step approach they can use in real customer conversations.',
     },
     framework: {
-      intro: 'Reinforced throughout instruction, practice and the final scenario.',
       steps: [
         { label: 'Listen' },
         { label: 'Acknowledge' },
@@ -324,10 +321,9 @@ export const projects: Project[] = [
     slug: 'managing-workplace-information',
     title: 'Managing Workplace Information: Find, Organise, Check, and Share with Confidence',
     shortDescription:
-      'A Rise 360 course that helps employees find, check, organise and share workplace information with confidence.',
+      'A Rise 360 course that helps employees find, organise, check and share workplace information with confidence.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Content Transformation Course',
     category: 'Content Transformation',
     embed: {
       src: '/courses/managing-workplace-information/index.html',
@@ -338,15 +334,15 @@ export const projects: Project[] = [
       learningNeed:
         'Employees create, store and share information every day, and without a shared approach, they waste time, use outdated versions, or share things with the wrong people.',
       designApproach:
-        'I turned general guidance on file management into a course built around one framework, Find, Check, Organise, Share, with examples and sorting activities for each step.',
+        'I turned general guidance on file management into a course built around one framework, Find, Organise, Check, Share, with examples and sorting activities for each step.',
       learningExperience:
         'Learners recognise common information problems, sort real examples into safe and unsafe categories, and apply all four steps to a realistic workplace scenario.',
     },
     framework: {
       steps: [
         { label: 'Find', description: 'Locate the likely source.' },
-        { label: 'Check', description: 'Confirm accuracy, currency, relevance and approval status.' },
         { label: 'Organise', description: 'Use the agreed structure and naming conventions.' },
+        { label: 'Check', description: 'Confirm accuracy, currency, relevance and approval status.' },
         { label: 'Share', description: 'Give the right information to the right people.' },
       ],
     },
@@ -363,7 +359,7 @@ export const projects: Project[] = [
       {
         step: 'Plan the content',
         detail:
-          'A content and gap analysis decided what to keep, combine or turn into practice. A course outline then sequenced it into four sections: Find, Check, Organise, Share.',
+          'A content and gap analysis decided what to keep, combine or turn into practice. A course outline then sequenced it into four sections: Find, Organise, Check, Share.',
       },
       {
         step: 'Write the script',
@@ -464,7 +460,6 @@ export const projects: Project[] = [
       'A Rise 360 microlearning course that helps professionals use the Eisenhower Matrix to prioritise a busy workday.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Corporate Microlearning Course',
     category: 'Corporate Microlearning',
     embed: {
       src: '/courses/taming-the-chaos/index.html',
