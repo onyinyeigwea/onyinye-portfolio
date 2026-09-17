@@ -23,12 +23,21 @@ export const contact = {
 export const expertise = [
   'Learning Experience Design',
   'Instructional Design',
-  'eLearning Development',
-  'Curriculum Development',
+  'Curriculum Design',
+  'Learner Analysis',
+  'Needs Analysis',
+  'Adult Learning',
+  'ADDIE',
+  'Learning Objectives',
   'Assessment Design',
-  'Scenario-Based Learning',
-  'Digital Learning',
+  'Storyboarding',
   'Learning Content Development',
+  'eLearning Design',
+  'Digital Learning',
+  'Learning Evaluation',
+  'Articulate Rise 360',
+  'Articulate Storyline',
+  'Genially',
 ];
 
 export const tools = [

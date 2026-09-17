@@ -81,7 +81,7 @@ export const projects: Project[] = [
       'A Rise 360 course that helps employees and team leaders give specific feedback and respond well when they receive it.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Personal Portfolio Project',
+    projectType: 'Corporate Microlearning Course',
     category: 'Corporate Microlearning',
     embed: {
       src: '/courses/effective-workplace-communication/index.html',
@@ -158,7 +158,7 @@ export const projects: Project[] = [
       'A branching Storyline scenario where customer-facing employees practise handling a frustrated customer through realistic decisions and feedback.',
     tool: 'Articulate Storyline',
     tools: ['Articulate Storyline 360'],
-    projectType: 'Personal Portfolio Project',
+    projectType: 'Branching Scenario Course',
     category: 'Scenario-Based Learning',
     cardImage: '/images/handling-difficult-customer-conversations/thumbnail.jpg',
     embed: {
@@ -250,7 +250,7 @@ export const projects: Project[] = [
       'An interactive digital learning experience designed in Genially for final-year medical students, across Digital Innovation, Clinical Enterprise and System Leadership.',
     tool: 'Genially',
     tools: ['Genially'],
-    projectType: 'Professional Work: Soteria Learning',
+    projectType: 'Soteria Learning',
     category: 'Interactive Learning',
     cardImage: '/images/professional-genially-learning-experiences/cover.png',
     galleryHeading: 'Selected Work',
@@ -327,7 +327,7 @@ export const projects: Project[] = [
       'A Rise 360 course that helps employees find, check, organise and share workplace information with confidence.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Personal Portfolio Project',
+    projectType: 'Content Transformation Course',
     category: 'Content Transformation',
     embed: {
       src: '/courses/managing-workplace-information/index.html',
@@ -464,7 +464,7 @@ export const projects: Project[] = [
       'A Rise 360 microlearning course that helps professionals use the Eisenhower Matrix to prioritise a busy workday.',
     tool: 'Articulate Rise 360',
     tools: ['Articulate Rise 360'],
-    projectType: 'Portfolio Project',
+    projectType: 'Corporate Microlearning Course',
     category: 'Corporate Microlearning',
     embed: {
       src: '/courses/taming-the-chaos/index.html',
