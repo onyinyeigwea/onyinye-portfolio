@@ -309,7 +309,8 @@ export const projects: Project[] = [
   {
     slug: 'professional-genially-learning-experiences',
     title: 'Professional Genially Learning Experiences',
-    shortDescription: 'A multi-week leadership programme I designed and built in Genially for Soteria Learning.',
+    shortDescription:
+      'An interactive digital learning experience I designed in Genially for final-year medical students, across three tracks: Digital Innovation, Clinical Enterprise and System Leadership.',
     tool: 'Genially',
     tools: ['Genially'],
     projectType: 'Professional Work: Soteria Learning',
@@ -319,39 +320,39 @@ export const projects: Project[] = [
     gallery: [
       {
         src: '/images/professional-genially-learning-experiences/cover.png',
-        alt: 'Opening screen of a leadership lesson in the programme',
-        caption: 'The opening screen of a leadership lesson in the programme.',
+        alt: 'Opening screen of a lesson in the System Leadership track',
+        caption: 'The opening screen of a lesson in the System Leadership track.',
       },
       {
         src: '/images/professional-genially-learning-experiences/scenario.jpg',
-        alt: 'A short workplace scenario used to introduce a concept',
-        caption: 'A short scenario I used to introduce an idea before naming it.',
+        alt: 'A short scenario used to introduce a concept in the Digital Innovation track',
+        caption: 'A short scenario I used to introduce an idea before naming it, from the Digital Innovation track.',
       },
       {
         src: '/images/professional-genially-learning-experiences/case-study.jpg',
-        alt: 'A case study screen used for practice',
+        alt: 'A case study screen used for practice in the Digital Innovation track',
         caption: 'A case study screen used for practice, in the same visual style.',
       },
       {
         src: '/images/professional-genially-learning-experiences/template.jpg',
-        alt: 'A reusable template handed to the learner, with a worked example',
+        alt: 'A reusable template handed to the learner, with a worked example, from the Digital Innovation track',
         caption: 'A template handed to the learner, with a worked example already filled in.',
       },
       {
         src: '/images/professional-genially-learning-experiences/systems-table.jpg',
-        alt: 'A table from a lesson on systems thinking',
-        caption: 'A content screen from a lesson on systems thinking.',
+        alt: 'A content screen from the Clinical Enterprise track',
+        caption: 'A content screen from the Clinical Enterprise track.',
       },
       {
         src: '/images/professional-genially-learning-experiences/feedback.jpg',
-        alt: 'A content screen on the importance of feedback in a system',
-        caption: 'Another content screen from the same lesson on systems thinking.',
+        alt: 'A content screen on feedback in a system, from the Clinical Enterprise track',
+        caption: 'Another content screen from the same lesson in the Clinical Enterprise track.',
       },
     ],
     whatIWorkedOn: [
-      'I designed interactive learning content in Genially for Soteria Learning.',
-      'The programme is for health-service leaders and clinician-entrepreneurs. It covers topics such as human-centred design, systems thinking and service improvement.',
-      'The screens shown here are real examples from the programme. I have covered or left out anything that could identify the client.',
+      'I designed an interactive digital learning experience in Genially for Soteria Learning.',
+      'It was built for final-year medical students, across three tracks: Digital Innovation, Clinical Enterprise and System Leadership.',
+      'The screens shown here are real examples from the project. I have covered or left out anything that could identify the client.',
     ],
     myRole: [
       'I designed and built the lessons in Genially.',
@@ -383,7 +384,7 @@ export const projects: Project[] = [
       'The learner answers a short check after each part, then a longer quiz at the end of the lesson.',
     ],
     designTakeaway:
-      'Every lesson follows the same pattern: a short story, then a framework, then a template, then a check. That consistency makes a multi-week programme feel like one course.',
+      'Every lesson follows the same pattern: a short story, then a framework, then a template, then a check. That consistency ties the three tracks together into one connected experience.',
   },
 
   // ---------------------------------------------------------------
