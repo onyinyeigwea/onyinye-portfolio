@@ -7,6 +7,7 @@ import PlaceholderScreen from '../../components/PlaceholderScreen.astro';
 import ProcessEvidence from '../../components/ProcessEvidence.astro';
 import EvidenceCard from '../../components/EvidenceCard.astro';
 import ImageGallery from '../../components/ImageGallery.astro';
+import QuickSummary from '../../components/QuickSummary.astro';
 import Tag from '../../components/Tag.astro';
 import Button from '../../components/Button.astro';
 import { projects } from '../../lib/projects';
@@ -36,6 +37,8 @@ const { project } = Astro.props;
     </header>
 
     <div class="wrap cs-body">
+      <QuickSummary summary={project.quickSummary} />
+
       {
         project.framework && (
           <section class="cs-framework">
@@ -56,20 +59,6 @@ const { project } = Astro.props;
         ) : null
       }
 
-      {project.whatIWorkedOn && <CaseStudySection heading="What I Worked On" items={project.whatIWorkedOn} />}
-
-      {project.myRole && <CaseStudySection heading="My Role" items={project.myRole} />}
-
-      {project.overview && <CaseStudySection heading="Overview" items={project.overview} />}
-
-      {project.learningNeed && <CaseStudySection heading="Learning Need" items={project.learningNeed} />}
-
-      {project.audience && <CaseStudySection heading="Audience" items={project.audience} />}
-
-      {project.objectives && <CaseStudySection heading="Learning Objectives" items={project.objectives} />}
-
-      {project.approach && <CaseStudySection heading="Instructional Approach" items={project.approach} />}
-
       {
         project.designProcess && project.designProcess.length > 0 && (
           <CaseStudySection heading="How I Designed It">
@@ -77,18 +66,6 @@ const { project } = Astro.props;
           </CaseStudySection>
         )
       }
-
-      {project.experience && <CaseStudySection heading="Learning Experience" items={project.experience} />}
-
-      {
-        project.whatLearnerExperiences && (
-          <CaseStudySection heading="What the Learner Experiences" items={project.whatLearnerExperiences} />
-        )
-      }
-
-      {project.interactions && <CaseStudySection heading="Interactions" items={project.interactions} />}
-
-      {project.assessment && <CaseStudySection heading="Assessment" items={project.assessment} />}
 
       {
         project.storyboardExample && (

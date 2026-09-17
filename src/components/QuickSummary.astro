@@ -1,0 +1,59 @@
+---
+import type { QuickSummary } from '../lib/projects';
+
+interface Props {
+  summary: QuickSummary;
+}
+
+const { summary } = Astro.props;
+
+const items = [
+  { label: 'Learning Need', text: summary.learningNeed },
+  { label: 'Design Approach', text: summary.designApproach },
+  { label: 'Learning Experience', text: summary.learningExperience },
+];
+---
+
+<div class="quick-summary">
+  {
+    items.map((item) => (
+      <div class="qs-item">
+        <p class="qs-label">{item.label}</p>
+        <p class="qs-text">{item.text}</p>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .quick-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    padding-block: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .qs-label {
+    font-family: var(--font-mono);
+    font-size: var(--step-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .qs-text {
+    font-size: var(--step-sm);
+    line-height: 1.55;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 760px) {
+    .quick-summary {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+</style>
