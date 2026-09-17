@@ -54,8 +54,11 @@ export interface Project {
   placeholderNote?: string;
   cardImage?: string;
   gallery?: GalleryImage[];
+  galleryHeading?: string;
   embed?: CourseEmbed;
   framework?: Framework;
+  whatIWorkedOn?: string[];
+  myRole?: string[];
   overview?: string[];
   learningNeed?: string[];
   audience?: string[];
@@ -63,6 +66,7 @@ export interface Project {
   approach?: string[];
   designProcess?: DesignProcessStep[];
   experience?: string[];
+  whatLearnerExperiences?: string[];
   interactions?: string[];
   assessment?: string[];
   storyboardExample?: StoryboardExample;
@@ -305,94 +309,81 @@ export const projects: Project[] = [
   {
     slug: 'professional-genially-learning-experiences',
     title: 'Professional Genially Learning Experiences',
-    shortDescription:
-      'A sample lesson and supporting screens from a multi-week leadership and systems-thinking programme I designed and built in Genially for Soteria Learning.',
+    shortDescription: 'A multi-week leadership programme I designed and built in Genially for Soteria Learning.',
     tool: 'Genially',
     tools: ['Genially'],
     projectType: 'Professional Work: Soteria Learning',
     category: 'Interactive Learning',
     cardImage: '/images/professional-genially-learning-experiences/cover.png',
-    embed: {
-      src: '/courses/professional-genially-learning-experiences/genially.html',
-      title: 'Designing and Testing for the User (Genially lesson)',
-      aspectRatio: '16 / 9',
-      note: 'One full lesson from the programme. Use the arrows in the lesson to move through its four parts.',
-    },
+    galleryHeading: 'Selected Work',
     gallery: [
       {
-        src: '/images/professional-genially-learning-experiences/comparison.png',
-        alt: 'Improvement by Accident versus Improvement by Design comparison screen',
-        caption: 'A two-column comparison used to introduce a framework before naming it, from a lesson on service improvement.',
+        src: '/images/professional-genially-learning-experiences/cover.png',
+        alt: 'Opening screen of a leadership lesson in the programme',
+        caption: 'The opening screen of a leadership lesson in the programme.',
       },
       {
-        src: '/images/professional-genially-learning-experiences/systems-table.jpg',
-        alt: 'Components of a System table from the How Clinical Services Work as a System lesson',
-        caption: 'A systems-thinking table from a second lesson in the same programme.',
+        src: '/images/professional-genially-learning-experiences/scenario.jpg',
+        alt: 'A short workplace scenario used to introduce a concept',
+        caption: 'A short scenario I used to introduce an idea before naming it.',
+      },
+      {
+        src: '/images/professional-genially-learning-experiences/case-study.jpg',
+        alt: 'A case study screen used for practice',
+        caption: 'A case study screen used for practice, in the same visual style.',
       },
       {
         src: '/images/professional-genially-learning-experiences/template.jpg',
-        alt: 'The User Story template screen, with a worked example for a community health worker',
-        caption: 'A reusable template handed to the learner, with a worked example already filled in.',
+        alt: 'A reusable template handed to the learner, with a worked example',
+        caption: 'A template handed to the learner, with a worked example already filled in.',
       },
       {
-        src: '/images/professional-genially-learning-experiences/cover.png',
-        alt: 'Title screen for the Values, Ethics, and Accountability lesson',
-        caption: 'The opening screen of a third lesson in the programme, showing the same visual system applied to a different topic.',
+        src: '/images/professional-genially-learning-experiences/systems-table.jpg',
+        alt: 'A table from a lesson on systems thinking',
+        caption: 'A content screen from a lesson on systems thinking.',
+      },
+      {
+        src: '/images/professional-genially-learning-experiences/feedback.jpg',
+        alt: 'A content screen on the importance of feedback in a system',
+        caption: 'Another content screen from the same lesson on systems thinking.',
       },
     ],
-    overview: [
-      'This is a genuine sample of professional work completed as part of a learning design engagement with Soteria Learning: a multi-week leadership programme for health-service leaders and clinician-entrepreneurs, built in Genially rather than a traditional slide-based authoring tool.',
-      'One complete lesson, Designing and Testing for the User, is embedded below so you can go through it exactly as a learner would. Screens from two further lessons in the same programme, on systems thinking and on leadership values, are shown alongside it to give a sense of the range of the material.',
-      'Client-specific detail, learner data and any unpublished material are left out. What is shown here is finished, learner-facing content.',
+    whatIWorkedOn: [
+      'I designed interactive learning content in Genially for Soteria Learning.',
+      'The programme is for health-service leaders and clinician-entrepreneurs. It covers topics such as human-centred design, systems thinking and service improvement.',
+      'The screens shown here are real examples from the programme. I have covered or left out anything that could identify the client.',
     ],
-    audience: [
-      'Health-service leaders and clinician-entrepreneurs working through a structured leadership programme. The material itself refers to them as "health systems leaders" and "clinician entrepreneurs."',
-    ],
-    approach: [
-      'Every lesson in the programme follows the same pattern: a short framing screen stating how long the lesson takes and how many parts it has, a Learning Objectives screen, then timed parts that each close with a short check before the learner can continue.',
-      'Concepts are introduced through a short scenario or case study before any framework is named. The embedded lesson opens with a story about a team that kept adding data-entry fields to a digital health tool because the software made it easy, not because nurses needed them, before naming human-centred design as the underlying idea.',
-      'Each part ends by handing the learner a plain, reusable template (a sentence pattern for writing a user story, a worksheet for choosing success measures) rather than leaving the idea abstract.',
+    myRole: [
+      'I designed and built the lessons in Genially.',
+      'This covered the content, the layout, the interactions, the templates learners use, and the checks at the end of each part.',
     ],
     designProcess: [
       {
         step: 'Define the learning objectives',
-        detail: 'Every lesson opens with a "By the end of the lesson, you will be able to" screen before any content is introduced.',
+        detail: 'Every lesson starts with a short screen that says what the learner will be able to do by the end.',
       },
       {
         step: 'Plan the content',
         detail:
-          'Each lesson is broken into a fixed number of timed parts (this one is four parts, about fifteen minutes each), and every part follows the same shape: framing, example, template, check.',
+          'Each lesson has four timed parts, about fifteen minutes each. Every part follows the same shape: an example, a short explanation, a template, then a check.',
       },
       {
         step: 'Build the interaction',
-        detail:
-          'I built each lesson directly in Genially, including the click-to-reveal objective panels, the hotspot-based case studies, and the templates. The embed below is the actual finished build, not a recording of it.',
+        detail: 'I built each lesson in Genially. This included the click-to-reveal screens, the case studies and the templates.',
       },
       {
         step: 'Assess the learner',
-        detail:
-          'Each part ends with a short check, and the lesson closes with a seven-question quiz that asks the learner to choose an answer and then compares it with a model response.',
+        detail: 'Each part ends with a short check. The lesson closes with a quiz that compares the learner’s answer with a model response.',
       },
     ],
-    experience: [
-      'Part 1, Human-Centred Design in Practice: opens with a scenario, "The Feature that Served the Technology, not the Nurse," about a team that added data-entry screens a digital tool made easy to build rather than screens a nurse actually needed, then draws out the lesson before a short check.',
-      'Part 2, User Research With No Budget: introduces observation, short interviews and usability testing as research methods that do not require a budget, illustrated with a case study, "Three Hours That Redesigned a Tool," then a check.',
-      'Part 3, The User Story: teaches a plain-language template ("As a... I want to... so that...") for tying a design decision to a real user need, worked through with an example from a community health worker, then a check.',
-      'Part 4, Knowing Whether It Works: covers how to tell whether a digital health tool is genuinely working, with a template for choosing success measures, then a check.',
-      'The lesson closes with key takeaways, a seven-question quiz, a reflection prompt, and a completion screen.',
-    ],
-    interactions: [
-      'Numbered, click-to-reveal panels for framing screens such as Learning Objectives, rather than a static bulleted list',
-      'A hotspot-based case study format: a horizontal timeline with markers the learner clicks to reveal what happened at each stage',
-      'Scenario-led screens that tell a short story before naming the concept behind it',
-      'Reusable templates the learner can lift directly into their own work, shown with a worked example already filled in',
-    ],
-    assessment: [
-      'Each of the four parts ends with a short check before the learner can continue.',
-      'The lesson closes with a seven-question quiz. The learner selects an answer and then compares it with a model response, followed by a reflection prompt asking what they will apply in their own work.',
+    whatLearnerExperiences: [
+      'The learner reads a short story or case study before I introduce the framework behind it.',
+      'The learner gets a template to use in their own work, with a worked example already filled in.',
+      'The learner clicks through numbered panels to reveal each learning objective, instead of reading a plain list.',
+      'The learner answers a short check after each part, then a longer quiz at the end of the lesson.',
     ],
     designTakeaway:
-      'The strongest instructional choice here is not any single interaction, it is the consistency. Every lesson in the programme opens with objectives, teaches through a short story before naming the framework, hands the learner a reusable template, and checks understanding before moving on. That consistency is what makes a multi-week programme feel like one coherent course rather than a set of separate lessons.',
+      'Every lesson follows the same pattern: a short story, then a framework, then a template, then a check. That consistency makes a multi-week programme feel like one course.',
   },
 
   // ---------------------------------------------------------------

@@ -56,6 +56,10 @@ const { project } = Astro.props;
         ) : null
       }
 
+      {project.whatIWorkedOn && <CaseStudySection heading="What I Worked On" items={project.whatIWorkedOn} />}
+
+      {project.myRole && <CaseStudySection heading="My Role" items={project.myRole} />}
+
       {project.overview && <CaseStudySection heading="Overview" items={project.overview} />}
 
       {project.learningNeed && <CaseStudySection heading="Learning Need" items={project.learningNeed} />}
@@ -75,6 +79,12 @@ const { project } = Astro.props;
       }
 
       {project.experience && <CaseStudySection heading="Learning Experience" items={project.experience} />}
+
+      {
+        project.whatLearnerExperiences && (
+          <CaseStudySection heading="What the Learner Experiences" items={project.whatLearnerExperiences} />
+        )
+      }
 
       {project.interactions && <CaseStudySection heading="Interactions" items={project.interactions} />}
 
@@ -119,7 +129,7 @@ const { project } = Astro.props;
 
       {
         project.gallery && project.gallery.length > 0 && (
-          <CaseStudySection heading="Selected Screens">
+          <CaseStudySection heading={project.galleryHeading ?? 'Selected Screens'}>
             <ImageGallery images={project.gallery} />
           </CaseStudySection>
         )
