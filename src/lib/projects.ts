@@ -16,11 +16,10 @@ export interface CourseEmbed {
   note?: string;
 }
 
-export interface RedesignContent {
-  before: string[];
-  analysis: string[];
-  redesignStrategy: string[];
-  resultingExperience: string[];
+export interface GalleryImage {
+  src: string;
+  alt: string;
+  caption?: string;
 }
 
 export interface DesignProcessStep {
@@ -54,6 +53,7 @@ export interface Project {
   isPlaceholder?: boolean;
   placeholderNote?: string;
   cardImage?: string;
+  gallery?: GalleryImage[];
   embed?: CourseEmbed;
   framework?: Framework;
   overview?: string[];
@@ -68,7 +68,6 @@ export interface Project {
   storyboardExample?: StoryboardExample;
   scriptExample?: ScriptExample;
   designTakeaway?: string;
-  redesign?: RedesignContent;
 }
 
 export const projects: Project[] = [
@@ -301,25 +300,99 @@ export const projects: Project[] = [
   },
 
   // ---------------------------------------------------------------
-  // 3. Professional Genially Learning Experiences (Soteria, placeholder)
+  // 3. Professional Genially Learning Experiences (Soteria Learning)
   // ---------------------------------------------------------------
   {
     slug: 'professional-genially-learning-experiences',
     title: 'Professional Genially Learning Experiences',
     shortDescription:
-      'Interactive learning experiences developed as part of professional learning design work with Soteria Learning.',
+      'A sample lesson and supporting screens from a multi-week leadership and systems-thinking programme I designed and built in Genially for Soteria Learning.',
     tool: 'Genially',
     tools: ['Genially'],
     projectType: 'Professional Work: Soteria Learning',
     category: 'Interactive Learning',
-    isPlaceholder: true,
-    placeholderNote: 'Selected professional work: approved screenshots to be added.',
+    cardImage: '/images/professional-genially-learning-experiences/cover.png',
+    embed: {
+      src: '/courses/professional-genially-learning-experiences/genially.html',
+      title: 'Designing and Testing for the User (Genially lesson)',
+      aspectRatio: '16 / 9',
+      note: 'One full lesson from the programme. Use the arrows in the lesson to move through its four parts.',
+    },
+    gallery: [
+      {
+        src: '/images/professional-genially-learning-experiences/comparison.png',
+        alt: 'Improvement by Accident versus Improvement by Design comparison screen',
+        caption: 'A two-column comparison used to introduce a framework before naming it, from a lesson on service improvement.',
+      },
+      {
+        src: '/images/professional-genially-learning-experiences/systems-table.jpg',
+        alt: 'Components of a System table from the How Clinical Services Work as a System lesson',
+        caption: 'A systems-thinking table from a second lesson in the same programme.',
+      },
+      {
+        src: '/images/professional-genially-learning-experiences/template.jpg',
+        alt: 'The User Story template screen, with a worked example for a community health worker',
+        caption: 'A reusable template handed to the learner, with a worked example already filled in.',
+      },
+      {
+        src: '/images/professional-genially-learning-experiences/cover.png',
+        alt: 'Title screen for the Values, Ethics, and Accountability lesson',
+        caption: 'The opening screen of a third lesson in the programme, showing the same visual system applied to a different topic.',
+      },
+    ],
     overview: [
-      'Alongside my personal portfolio projects, this work was developed as part of professional learning design work with Soteria Learning, using Genially to build interactive learning experiences beyond traditional slide-based eLearning.',
-      'Because this work was produced for a client rather than as an independent portfolio piece, it is presented here at a level of detail appropriate for public sharing. Client-specific content, learner data and unpublished material are not included.',
+      'This is a genuine sample of professional work completed as part of a learning design engagement with Soteria Learning: a multi-week leadership programme for health-service leaders and clinician-entrepreneurs, built in Genially rather than a traditional slide-based authoring tool.',
+      'One complete lesson, Designing and Testing for the User, is embedded below so you can go through it exactly as a learner would. Screens from two further lessons in the same programme, on systems thinking and on leadership values, are shown alongside it to give a sense of the range of the material.',
+      'Client-specific detail, learner data and any unpublished material are left out. What is shown here is finished, learner-facing content.',
+    ],
+    audience: [
+      'Health-service leaders and clinician-entrepreneurs working through a structured leadership programme. The material itself refers to them as "health systems leaders" and "clinician entrepreneurs."',
+    ],
+    approach: [
+      'Every lesson in the programme follows the same pattern: a short framing screen stating how long the lesson takes and how many parts it has, a Learning Objectives screen, then timed parts that each close with a short check before the learner can continue.',
+      'Concepts are introduced through a short scenario or case study before any framework is named. The embedded lesson opens with a story about a team that kept adding data-entry fields to a digital health tool because the software made it easy, not because nurses needed them, before naming human-centred design as the underlying idea.',
+      'Each part ends by handing the learner a plain, reusable template (a sentence pattern for writing a user story, a worksheet for choosing success measures) rather than leaving the idea abstract.',
+    ],
+    designProcess: [
+      {
+        step: 'Define the learning objectives',
+        detail: 'Every lesson opens with a "By the end of the lesson, you will be able to" screen before any content is introduced.',
+      },
+      {
+        step: 'Plan the content',
+        detail:
+          'Each lesson is broken into a fixed number of timed parts (this one is four parts, about fifteen minutes each), and every part follows the same shape: framing, example, template, check.',
+      },
+      {
+        step: 'Build the interaction',
+        detail:
+          'I built each lesson directly in Genially, including the click-to-reveal objective panels, the hotspot-based case studies, and the templates. The embed below is the actual finished build, not a recording of it.',
+      },
+      {
+        step: 'Assess the learner',
+        detail:
+          'Each part ends with a short check, and the lesson closes with a seven-question quiz that asks the learner to choose an answer and then compares it with a model response.',
+      },
+    ],
+    experience: [
+      'Part 1, Human-Centred Design in Practice: opens with a scenario, "The Feature that Served the Technology, not the Nurse," about a team that added data-entry screens a digital tool made easy to build rather than screens a nurse actually needed, then draws out the lesson before a short check.',
+      'Part 2, User Research With No Budget: introduces observation, short interviews and usability testing as research methods that do not require a budget, illustrated with a case study, "Three Hours That Redesigned a Tool," then a check.',
+      'Part 3, The User Story: teaches a plain-language template ("As a... I want to... so that...") for tying a design decision to a real user need, worked through with an example from a community health worker, then a check.',
+      'Part 4, Knowing Whether It Works: covers how to tell whether a digital health tool is genuinely working, with a template for choosing success measures, then a check.',
+      'The lesson closes with key takeaways, a seven-question quiz, a reflection prompt, and a completion screen.',
+    ],
+    interactions: [
+      'Numbered, click-to-reveal panels for framing screens such as Learning Objectives, rather than a static bulleted list',
+      'A hotspot-based case study format: a horizontal timeline with markers the learner clicks to reveal what happened at each stage',
+      'Scenario-led screens that tell a short story before naming the concept behind it',
+      'Reusable templates the learner can lift directly into their own work, shown with a worked example already filled in',
+    ],
+    assessment: [
+      'Each of the four parts ends with a short check before the learner can continue.',
+      'The lesson closes with a seven-question quiz. The learner selects an answer and then compares it with a model response, followed by a reflection prompt asking what they will apply in their own work.',
     ],
     designTakeaway:
-      'Approved screenshots and a fuller description of this work will be added once they have been confirmed as suitable for public display.',
+      'The strongest instructional choice here is not any single interaction, it is the consistency. Every lesson in the programme opens with objectives, teaches through a short story before naming the framework, hands the learner a reusable template, and checks understanding before moving on. That consistency is what makes a multi-week programme feel like one coherent course rather than a set of separate lessons.',
   },
 
   // ---------------------------------------------------------------
@@ -425,83 +498,7 @@ export const projects: Project[] = [
   },
 
   // ---------------------------------------------------------------
-  // 5. Write Better Workplace Emails (redesign)
-  // ---------------------------------------------------------------
-  {
-    slug: 'write-better-workplace-emails',
-    title: 'Write Better Workplace Emails',
-    shortDescription:
-      'A redesign of a deliberately weak, text-heavy email-writing course into a short, practice-oriented learning experience.',
-    tool: 'Articulate Rise 360',
-    tools: ['Articulate Rise 360'],
-    projectType: 'eLearning Course Redesign',
-    category: 'Redesign & Evaluation',
-    framework: {
-      steps: [
-        { label: 'Problem' },
-        { label: 'Principle' },
-        { label: 'Example' },
-        { label: 'Practice' },
-        { label: 'Feedback' },
-        { label: 'Application' },
-      ],
-    },
-    overview: [
-      'This project starts from a deliberately weak source course on professional email communication: nine sections of plain instructional text (subject lines, greetings, structure, tone, attachments, proofreading) followed by a three-question recall quiz. The brief was to evaluate that course the way an instructional designer would evaluate any inherited course, then redesign it.',
-      'The goal of the redesign was never to add more information. The original content was already reasonably accurate. The problem was that it gave learners nothing to do with it. The redesign keeps the same subject matter and turns it into something learners can practise, not just read.',
-    ],
-    redesign: {
-      before: [
-        'The original course presented email guidance as nine short sections of plain text (subject lines, greetings, message content, tone, attachments, proofreading and general tips) with no worked examples, no practice, and a three-question recall quiz at the end (for example: "What should a subject line do?").',
-      ],
-      analysis: [
-        'Weak learning objectives: the course did not state what a learner should be able to do differently afterward, only what topics it covered.',
-        'Too much information presented as text, so learners were reading rather than actively working with the material.',
-        'Weak content structure: the course moved topic to topic without building toward application.',
-        'Generic examples: example phrases were isolated statements rather than realistic workplace emails, so learners could understand a rule without being able to apply it.',
-        'Limited interactivity: there was essentially no meaningful interaction before the final quiz.',
-        'Assessment measured recall: the quiz tested whether learners remembered the rules, not whether they could write or improve an email.',
-        'Limited feedback: correct answers were shown without explaining why they were correct.',
-      ],
-      redesignStrategy: [
-        'New instructional flow: Problem, Principle, Example, Practice, Feedback, Application, replacing the original’s topic-by-topic list.',
-        'Contrastive learning: learners compare two versions of the same email, or the same sentence, and identify what makes one more effective, rather than being told the rule directly.',
-        'Content strategy: long, combined instructions ("use clear subject lines, appropriate greetings, professional tone...") were broken into one practical decision per screen.',
-        'Assessment strategy shifted from recall to recognition, selection, improvement and application, including an email-improvement activity rather than a definition quiz.',
-        'Feedback strategy: every practice question explains why the chosen response works, not simply whether it was correct.',
-      ],
-      resultingExperience: [
-        'Lesson 1, Start With the Purpose: what makes an email effective (clear, concise, professional, actionable), and identifying the purpose before writing.',
-        'Lesson 2, Make the Message Easy to Follow: writing a useful subject line, getting to the point, a simple four-part structure (purpose, relevant information, action, next step), and a side-by-side comparison of a weak and a strong version of the same email.',
-        'Lesson 3, Consider Your Tone: how the same request can escalate or de-escalate a situation depending on wording, with practice rewriting a blunt or frustrated message professionally.',
-        'Lesson 4, Check Before You Send: attachments and links, proofreading, and a pre-send checklist, closing with a knowledge check.',
-        'Lesson 5, Put It Into Practice: a scenario requiring the learner to make four linked decisions on one email (subject, message, tone and final check) before a closing checklist and course summary.',
-      ],
-    },
-    audience: [
-      'Employees who use email as a routine part of their work and already know how to use email mechanically (sending, replying, attaching files). The gap this course targets is the quality of professional communication, not technical email literacy.',
-    ],
-    objectives: [
-      'Identify the essential elements of an effective workplace email.',
-      'Apply appropriate structure and tone to workplace email messages.',
-      'Identify common email communication problems.',
-      'Improve a poorly written workplace email.',
-      'Apply effective email practices to a realistic workplace situation.',
-    ],
-    scriptExample: {
-      scene: 'Screen 8, Compare Two Emails, from the redesigned script',
-      text:
-        'Email A. Subject: Update. "Hi, I wanted to send an update about the project. There have been some changes and I think we should probably discuss them when you have time. Thanks." Email B. Subject: Project Schedule Update, Review Needed. "Hi David, the project schedule has been updated following the latest requirements. Please review the attached schedule and confirm whether the proposed dates work for your team by Thursday. Thank you." Which email is easier to act on?',
-      interaction: 'Multiple choice.',
-      feedback:
-        'Correct answer: Email B. It gives the reader a specific subject, relevant context, a clear action and a deadline.',
-    },
-    designTakeaway:
-      'Redesign work is a different skill from building from scratch. The job is to diagnose precisely why an existing course is not working, then change only what is needed to fix it, rather than starting over.',
-  },
-
-  // ---------------------------------------------------------------
-  // 6. Energy in Action (curriculum transformation)
+  // 5. Energy in Action (curriculum transformation)
   // ---------------------------------------------------------------
   {
     slug: 'energy-in-action',
@@ -595,7 +592,7 @@ export const projects: Project[] = [
   },
 
   // ---------------------------------------------------------------
-  // 7. Taming the Chaos
+  // 6. Taming the Chaos
   // ---------------------------------------------------------------
   {
     slug: 'taming-the-chaos',

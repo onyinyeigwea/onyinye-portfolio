@@ -6,6 +6,7 @@ import CourseEmbedComponent from '../../components/CourseEmbed.astro';
 import PlaceholderScreen from '../../components/PlaceholderScreen.astro';
 import ProcessEvidence from '../../components/ProcessEvidence.astro';
 import EvidenceCard from '../../components/EvidenceCard.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
 import Tag from '../../components/Tag.astro';
 import Button from '../../components/Button.astro';
 import { projects } from '../../lib/projects';
@@ -73,36 +74,6 @@ const { project } = Astro.props;
         )
       }
 
-      {
-        project.redesign && (
-          <>
-            <CaseStudySection heading="Before" items={project.redesign.before} />
-            <CaseStudySection heading="Analysis" items={project.redesign.analysis} />
-            <CaseStudySection heading="Redesign" items={project.redesign.redesignStrategy} />
-            {project.scriptExample && (
-              <CaseStudySection heading="Script Example">
-                <EvidenceCard
-                  rows={[
-                    { label: 'Scene', value: project.scriptExample.scene },
-                    { label: 'On-screen text', value: project.scriptExample.text },
-                    ...(project.scriptExample.interaction
-                      ? [{ label: 'Learner interaction', value: project.scriptExample.interaction }]
-                      : []),
-                    ...(project.scriptExample.feedback
-                      ? [{ label: 'Feedback', value: project.scriptExample.feedback }]
-                      : []),
-                  ]}
-                />
-              </CaseStudySection>
-            )}
-            <CaseStudySection
-              heading="Resulting Learning Experience"
-              items={project.redesign.resultingExperience}
-            />
-          </>
-        )
-      }
-
       {project.experience && <CaseStudySection heading="Learning Experience" items={project.experience} />}
 
       {project.interactions && <CaseStudySection heading="Interactions" items={project.interactions} />}
@@ -128,7 +99,7 @@ const { project } = Astro.props;
       }
 
       {
-        project.scriptExample && !project.redesign && (
+        project.scriptExample && (
           <CaseStudySection heading="Script Example">
             <EvidenceCard
               rows={[
@@ -142,6 +113,14 @@ const { project } = Astro.props;
                   : []),
               ]}
             />
+          </CaseStudySection>
+        )
+      }
+
+      {
+        project.gallery && project.gallery.length > 0 && (
+          <CaseStudySection heading="Selected Screens">
+            <ImageGallery images={project.gallery} />
           </CaseStudySection>
         )
       }
