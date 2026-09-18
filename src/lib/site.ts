@@ -14,12 +14,6 @@ export const nav = [
   { label: 'Contact', href: '/contact' },
 ];
 
-export const contact = {
-  email: 'onyinyeigwe.a@gmail.com',
-  linkedin: { label: 'LinkedIn', href: 'https://www.linkedin.com/in/igweonyinye/' },
-  upwork: { label: 'Upwork', href: 'https://www.upwork.com/freelancers/onyinyemiriam' },
-};
-
 // Full capability list, shown on the About page.
 export const expertise = [
   'Learning Experience Design',
